@@ -1,0 +1,75 @@
+.linear-gradient(@pos:bottom, @start:#9CBE02 43%, @end:#B0D10D 69%) {
+    background-image: linear-gradient(@pos, @start, @end);
+    background-image: -o-linear-gradient(@pos, @start, @end);
+    background-image: -moz-linear-gradient(@pos, @start, @end);
+    background-image: -webkit-linear-gradient(@pos, @start, @end);
+    background-image: -ms-linear-gradient(@pos, @start, @end);
+}
+
+.border-radius(@radius: 2px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+    -o-border-radius: @radius;
+    border-radius: @radius;
+}
+.box-shadow-both(@params:inset 1px 1px 3px #999,@second:1px 1px 3px #999) {
+    -moz-box-shadow:@params, @second;
+    -webkit-box-shadow: @params, @second;
+    -ms-box-shadow: @params, @second;
+    -o-box-shadow: @params,@second;
+    box-shadow: @params,@second;
+}
+.box-shadow(@params:inset 1px 1px 3px #999) {
+    -moz-box-shadow:@params;
+    -webkit-box-shadow: @params;
+    -ms-box-shadow: @params;
+    -o-box-shadow: @params;
+    box-shadow: @params;
+}
+.transform(@params) {
+    -webkit-transform: @params;
+    -moz-transform: @params;
+    -o-transform: @params;
+    transform: @params;
+}
+.transition-transform(@params) {
+    -webkit-transition: -webkit-transform @params;
+    -moz-transition: -moz-transform @params;
+    -o-transition: -o-transform @params;
+    transition: transform @params;
+}
+.transition-transform-multiple(@params,@param2) {
+    -webkit-transition: -webkit-transform @params,@param2;
+    -moz-transition: -moz-transform @params,@param2;
+    -o-transition: -o-transform @params,@param2;
+    transition: transform @params,@param2;
+}
+
+
+.transition(@params) {
+    -webkit-transition: @params;
+    -moz-transition: @params;
+    -o-transition: @params;
+    transition: @params;
+}
+
+.transform-origin(@params) {
+    -webkit-transform-origin: @params;
+    -moz-transform-origin: @params;
+    -o-transform-origin: @params;
+    transform-origin: @params;
+}
+
+.transitiontwo(@param1,@param2) {
+    -webkit-transition: @param1,@param2;
+    -moz-transition: @param1,@param2;
+    -o-transition: @param1,@param2;
+    transition: @param1,@param2;
+}
+.user-select(@params) {
+    user-select: @params;
+    -webkit-user-select: @params;
+    -moz-user-select: @params;
+    -o-user-select: @params;
+}

@@ -1,0 +1,10 @@
+<service auto-start="true">
+    <name>User Embed Service</name>
+    <public-id>ns://www.cubeia.com/poker/userembedservice</public-id>
+    <contract>com.cubeia.games.poker.admin.service.UserEmbedContract</contract>
+    <service>com.cubeia.games.poker.admin.service.UserEmbedService</service>
+    <description/>
+    <exported>
+
+    </exported>
+</service>

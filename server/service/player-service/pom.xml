@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>firebase-service-modules</artifactId>
+        <groupId>com.cubeia.games</groupId>
+        <version>1.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.cubeia.games.poker</groupId>
+    <artifactId>player-service</artifactId>
+    <packaging>firebase-sar</packaging>
+    <name>Player Service</name>
+    <dependencies>
+        <dependency>
+            <groupId>com.cubeia.firebase</groupId>
+            <artifactId>firebase-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.cubeia.firebase</groupId>
+            <artifactId>firebase-protocol</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cubeia.games</groupId>
+            <artifactId>routing-service-protocol</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.cubeia.games</groupId>
+            <artifactId>poker-protocol</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

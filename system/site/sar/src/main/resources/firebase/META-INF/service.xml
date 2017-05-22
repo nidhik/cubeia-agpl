@@ -1,0 +1,10 @@
+<service auto-start="true">
+    <name>Poker Site Service</name>
+    <public-id>ns://www.cubeia.com/games/gamesiteservice</public-id>
+    <contract>com.cubeia.firebase.api.service.Contract</contract>
+    <service>com.cubeia.games.site.service.GameSiteService</service>
+    <description/>
+    <exported>
+
+    </exported>
+</service>

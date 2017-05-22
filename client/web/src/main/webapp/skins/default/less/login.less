@@ -1,0 +1,74 @@
+
+.session-timed-out-container {
+
+    width:100%;
+    display:block;
+    font-size: 120%;
+    .transition(height 1s);
+
+    &.show{
+        height:150px;
+    }
+}
+.login-container {
+
+    width:100%;
+    display:block;
+    font-size: 120%;
+    height:0px;
+    overflow: hidden;
+    .transition(height 1s);
+
+  &.show{
+    height:150px;
+  }
+}
+.login-input-container {
+    box-sizing: border-box;
+    width:100%;
+    display:block;
+    float:left;
+    margin-bottom: 0.5em;
+
+    input {
+        box-sizing: border-box;
+        .basic-input;
+        width:100%;
+        font-size:80%;
+        margin-bottom:3%;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.login-button {
+   padding: 0.4em;
+   width:auto;
+   font-size: 110%;
+   text-align: center;
+   clear: both;
+   margin-bottom:3%;
+}
+.describe {
+    color:@grayText;
+    font-style: italic;
+}
+.login-view {
+    width:300px;
+    margin:0 auto;
+    margin-top:15%;
+}
+
+.login-dialog {
+    width:100%;
+    margin-left:15%;
+}
+.status-label {
+    font-size: 150%;
+}
+.loading-view-container {
+    width:400px;
+    margin:0 auto;
+    padding-top:15%;
+}

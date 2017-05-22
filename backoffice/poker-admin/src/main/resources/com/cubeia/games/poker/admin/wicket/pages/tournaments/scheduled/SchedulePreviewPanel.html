@@ -1,0 +1,53 @@
+<wicket:panel>
+  
+  	<span wicket:id="instance">
+  	</span>
+  	
+  	
+  	<wicket:fragment wicket:id="noDataFragment"><h5>No data.</h5></wicket:fragment>
+  	
+  	<wicket:fragment wicket:id="invalidCronFragment"><h5><span class="label label-important">ERROR</span> <span wicket:id="errorMsg"></span></h5></wicket:fragment>
+  	
+  	<wicket:fragment wicket:id="noInstancesFragment"><h5><span class="label label-warning">WARNING</span> This schedule has no instances!</h5></wicket:fragment>
+  	
+  	<wicket:fragment wicket:id="instanceFragment">
+	    <h5>Schedule Definition</h5>
+	  
+	  	<dl class="dl-horizontal">
+	  		<dt>Time Zone:      </dt><dd> <span wicket:id="tz"/></dd>
+	  		<dt>Schedule Start:</dt><dd> <span wicket:id="schedStart"/></dd>
+	  		<dt>Schedule End:  </dt><dd> <span wicket:id="schedEnd"/>  </dd>
+	  		<dt>Schedule Cron: </dt><dd> <span wicket:id="schedCron"/> </dd>
+	  	</dl>
+  
+  	
+		<h5>
+			<span class="btn-group">
+				<a wicket:id="first" class="btn btn-small">&lt;&lt;</a>
+				<a wicket:id="prev" class="btn btn-small">&lt;</a>
+				<a wicket:id="next" class="btn btn-small">&gt;</a>
+				<a wicket:id="last" class="btn btn-small">&gt;&gt;</a>
+			</span>
+	    </h5>
+			
+	    <h5>
+			Instance <span wicket:id="instanceNumber">X</span> of <span wicket:id="instanceCount">Y</span>
+		</h5>
+		
+	
+		<dl class="dl-horizontal">
+		  <dt>Announce:</dt>
+		  <dd><span wicket:id="announce"></span></dd>
+		  
+		  <dt>Registering:</dt>
+		  <dd><span wicket:id="register"></span></dd>
+		  
+		  <dt>Start:</dt>
+		  <dd><span wicket:id="start"></span></dd>
+		</dl>
+
+  	
+  	
+  	</wicket:fragment>
+  
+</wicket:panel>

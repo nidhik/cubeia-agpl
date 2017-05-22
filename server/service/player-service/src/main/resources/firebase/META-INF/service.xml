@@ -1,0 +1,11 @@
+<service auto-start="true">
+    <name>player-service</name>
+    <public-id>com.cubeia.poker:player-service</public-id>
+    <contract>com.cubeia.poker.playerservice.api.PlayerService</contract>
+    <service>com.cubeia.poker.playerservice.impl.PlayerServiceImpl</service>
+    <dependencies/>
+    <description/>
+    <exported>
+    
+    </exported>
+</service>

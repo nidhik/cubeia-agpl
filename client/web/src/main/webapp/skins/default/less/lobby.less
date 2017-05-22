@@ -1,0 +1,337 @@
+.login-view {
+    .logo-container {
+        width: 250px;
+        height: 100px;
+        margin-top:10px;
+    }
+}
+.lobby-container {
+    .logo-container {
+        height: 100px;
+        max-width: 250px;
+        width:100%;
+        margin-top:10px;
+        float:left;
+    }
+    div.logo-container {
+        padding-bottom: 0;
+    }
+}
+.nav-gradient {
+
+}
+.active-item {
+    background-color: transparent;
+    color:#dc3b3b;
+
+}
+.nav-item {
+
+    li {
+        a, a:hover, a:focus  {
+            font-family: "Myriad Pro", Arial, san-serif;
+            color: #fff;
+            background-color: transparent;
+        }
+        &.currency {
+            margin-right:2px;
+            margin-top:2px;
+            a {
+                color:#fff;
+                background-color:#343333;
+
+            }
+            &.active {
+                a, a:hover, a:focus {
+                    color:#fff;
+                    background-color:#ae0000;
+                }
+            }
+        }
+        &.active {
+            a, a:hover, a:focus {
+                .active-item;
+                &.currency {
+                    background-color:#ae0000;
+                }
+            }
+        }
+    }
+    li+li {
+        margin-left:0;
+    }
+}
+.currencies {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    float:right;
+    font-size:120%;
+    background:none;
+    .nav-item;
+    padding-left:0;
+    a.description {
+        padding-left:0;
+        &:hover,&:focus {
+            color:#aaa;
+        }
+        color:#aaa;
+    }
+}
+.navbar-top  {
+    background-color:transparent;
+    font-size: 180%;
+    .nav-item;
+    margin-bottom:5px;
+
+    li {
+        a {
+            padding: 5px 15px;
+        }
+        &:first-child {
+            border-left: none;
+        }
+        &:last-child {
+            border-right: none;
+        }
+        border-right:1px solid #262626;
+        border-left:1px solid #3a3a3a;
+    }
+}
+.navbar-variant {
+    font-size: 140%;
+    background-color:#414141;
+    .border-radius(0);
+    .nav-item;
+    margin-bottom:8px;
+    .box-shadow(0px 1px 3px #222);
+    li {
+        a {
+            padding:15px 15px;
+        }
+        margin: 0;
+        border-right:1px solid #2f2f2f;
+        border-left:1px solid #525252;
+
+        &:last-child {
+            border-right: none;
+        }
+        &.active {
+            &:after {
+                position: absolute;
+                content: '';
+                width: 0;
+                height: 0;
+                left:50%;
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-top: 10px solid #414141;
+            }
+        }
+    }
+
+}
+
+.navbar-limits {
+    font-size: 120%;
+    background-color:transparent;
+    .border-radius(0);
+    .nav-item;
+
+}
+
+.lobby-list-table {
+    .default-table;
+
+    tbody {
+        tr {
+            cursor: pointer;
+            td {
+                line-height: 1.2;
+
+                &.play-text {
+                    vertical-align: middle;
+                }
+            }
+
+          &:hover {
+            background-color: #525252;
+          }
+        }
+    }
+    .list-item-name {
+        font-size: 120%;
+        clear: both;
+
+    }
+    .list-item {
+        display: inline-block;
+        color:#ccc;
+        font-size: 70%;
+        padding-right: 8px;
+    }
+}
+.status {
+    .border-radius(2px);
+    color:#fff;
+
+    &.REGISTERING, &.CANCELLED, &.FINISHED, &.RUNNING, &.ANNOUNCED  {
+        background-color: #38830e;
+        color:#fff;
+        padding-right: 2px;
+        padding:1px 2px;
+    }
+    &.FINISHED, &.CANCELLED, &.ANNOUNCED {
+       background-color: #626262;
+    }
+    &.RUNNING{
+        background-color: #d99717;
+    }
+    font-size: 80%;
+}
+td.table-name {
+    font-size:120%;
+}
+.start-time {
+    font-size: 80%;
+    color:#bbb;
+}
+.nav-active-item {
+    display:none;
+}
+.navbar-top-collapse {
+    padding-left: 0;
+}
+.navbar-variant-collapse {
+    padding-left: 0;
+}
+
+table thead {
+    th.sorting {
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: left;
+        padding-left:15px;
+        .user-select(none);
+    }
+    th.sorting-desc {
+
+    }
+    th.sorting-asc {
+
+    }
+}
+.no-tables {
+    padding:10px;
+}
+.lobby-checkbox-filter {
+    margin-top: 10px;
+    padding: 5px 10px;
+
+    label {
+        margin-right: 10px;
+
+        &:before {
+            height:1.2em;
+            padding-bottom: 0;
+            background-position: center 3px;
+        }
+    }
+
+
+}
+*, *:before, *:after  {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.lobby-container *,.lobby-container *:before,.lobby-container  *:after{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+.lobby-right-promotions-iframe {
+    width:100%;
+    height:200px;
+    margin: 0;
+    border:none;
+}
+@media (max-width:992px){
+    .lobby-right-promotions-iframe {
+        width:100%;
+        height:250px;
+        margin: 0;
+        border:none;
+    }
+}
+
+.lobby-top-promotions-iframe {
+    width:100%;
+    margin: 0;
+    height: 0;
+    border:none;
+    display: block;
+    margin-bottom:20px;
+    .transition(height 1s);
+
+    &.loaded {
+        height:200px;
+    }
+}
+
+.top-promo-loading-container {
+    width:100%;
+    margin: 0;
+    height: 200px;
+    font-size:130%;
+    div {
+        padding-top:80px;
+    }
+    opacity:1;
+    border:none;
+    text-align: center;
+    color:#999;
+    display: block;
+
+    .transitiontwo(height 1s, opacity 1s);
+
+    &.loaded {
+        height:0px;
+        opacity:0;
+    }
+}
+.lobby-container {
+    .level {
+        margin-left:0;
+        margin-right:0;
+        margin-bottom:-2px;
+        margin-top:0;
+    }
+}
+.lobby-container,.tournament-view {
+    .requires-level {
+        display: inline-block;
+    }
+
+    .lock {
+        display:inline-block;
+        width:20px;
+        height:20px;
+        background-image: url("../images/lock.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+.tournament-view  {
+    .tournament-name  {
+        .level {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+    }
+
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Cubeia Poker</title></head>
+    <body>
+        <div align="center">
+            <h2>Cubeia Poker (Open Source)</h2>
+            <h3>Standalone Single Server Installation</h3>
+            <p>Register: <a href="register.html">Create a Profile</a></p>
+            <p>Play    : <a href="game/">Go to the Game</a></p>
+            <p></p>
+
+        </div>
+
+        <div  style="max-width:600px; margin: auto;" >
+
+            <h3>Website</h3>
+            <a href="http://localhost:8181">http://localhost:8181</a>
+            <p>A very basic website (this page)</p>
+
+            <h3>User Registration</h3>
+            <a href="register.html">http://localhost:8181/register.html</a>
+            <p>A very basic user registration (register before log in)</p>
+            
+            <h3>Poker Client</h3>
+            <a href="http://localhost:8181/game">http://localhost:8181/game</a>
+            <p>Join a table. Use a 2nd browser for a 2nd player to make a quick test.</p>
+
+            <h3>Bots Admin</h3>
+            <a href="http://localhost:8081">http://localhost:8081</a>
+            <p>Set 10 or 50 bots and press the OK button. You should see within the lobby that
+                the tables are getting players. Join one or more tables and check the game.</p>
+
+            <p>After this, you can start tournament bots, asking them to leave one seat open,
+                so you can join a tournament.</p>
+
+            <p>IMPORTANT:
+                Bots are like other users, so if you want to use the bots, you have to create
+                user-accounts for them, too. Example for 200 bots (Bot_1 ... Bot_200):</p>
+
+            <pre>
+  cd tools/user-creator/target
+  java -jar user-creator.jar -d -u Bot -p 1 -o 0 -r 200
+            </pre>
+
+            <h3>Poker Admin</h3>
+            <a href="http://localhost:8088">http://localhost:8088</a>
+            <p>Create a Table Template, which should result in tables showing up in the lobby.
+                The names for the tables are picked up from a list. </p>
+
+            <p>Now you can create a simple Sit&Go, which should show up in the lobby.</p>
+
+            <p>Last, create a Scheduled Tournament template.</p>
+
+            That's it, the Cubeia Poker System is running.
+
+            <h3>Resources</h3>
+            <p>This Poker System uses the Cubeia Poker Open Sources </p>
+            
+            <p><a href="https://bitbucket.org/cubeia/cubeia-poker">Sources on bitbucket.com</a></p>
+            <p><a href="http://www.cubeia.org/">Cubeia Poker Community Site</a></p>
+            
+        </div>
+    
+    </body>
+</html>

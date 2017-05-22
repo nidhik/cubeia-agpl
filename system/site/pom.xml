@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <name>Game Site Modules</name>
+
+    <groupId>com.cubeia.games</groupId>    
+    <artifactId>game-site-modules</artifactId>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>com.cubeia.games</groupId>
+        <artifactId>poker-root</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+    
+    <modules>
+        <module>war</module>
+        <module>sar</module>
+    </modules>
+
+</project>

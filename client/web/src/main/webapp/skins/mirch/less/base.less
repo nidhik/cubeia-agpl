@@ -1,0 +1,65 @@
+@import "../../default/less/compatability.less";
+@import "../../cubeiaclassic/less/base.less";
+
+@import "hand-rankings.less";
+
+.logo-container {
+    background-image: url("../images/lobby/poker-logo.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height:140px;
+}
+.lobby-container .logo-container {
+    max-width: 200px;
+}
+
+.table-logo {
+  background-image: url("../images/table/mirc-table-logo.png");
+  background-size: 25%;
+  background-repeat: no-repeat;
+  background-position: center 35%;
+}
+
+.future-actions {
+    .future-action {
+        background:none;
+        input:checked + .checkbox-icon-label {
+            .default-btn;
+        }
+        .checkbox-icon-label {
+            vertical-align: top;
+            background-position: top;
+            display: inline-block;
+            clear: both;
+            padding: 0.5em;
+            .secondary-button;
+            span {
+                vertical-align: top;
+            }
+            &:hover {
+                color:@action-button-color;
+            }
+        }
+    }
+}
+
+
+@media (max-width:480px){
+  .logo-container {
+      background-size: 100%;
+      height: auto;
+      padding-bottom: 60%;
+  }
+}
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .table-container {
+        background-image: url("../images/table/table.png");
+    }
+}
+@media only screen and (max-width:700px), only screen and (max-height: 400px){
+    .table-container {
+        background-image: url("../images/table/table.png");
+    }
+}

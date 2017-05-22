@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+    
+    <display-name>Poker Site</display-name>
+
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.html</url-pattern>
+            <is-xml>false</is-xml>           
+        </jsp-property-group>
+    </jsp-config>
+    
+    <servlet>
+        <servlet-name>com.cubeia.games.site.RegisterServlet</servlet-name>
+        <servlet-class>com.cubeia.games.site.RegisterServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>com.cubeia.games.site.RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>    
+
+</web-app>

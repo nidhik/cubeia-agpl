@@ -1,0 +1,298 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>poker-uar</artifactId>
+    <name>Poker Unified Archive</name>
+    <packaging>firebase-uar</packaging>
+
+    <parent>
+        <groupId>com.cubeia.games</groupId>
+        <artifactId>poker</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+        </dependency>    
+        <dependency>
+            <groupId>com.cubeia.games</groupId>
+            <artifactId>poker-protocol</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cubeia.games</groupId>
+            <artifactId>poker-game</artifactId>
+            <type>firebase-gar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.cubeia.games</groupId>
+            <artifactId>poker-tournament</artifactId>
+            <type>firebase-tar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.cubeia.games.handhistory</groupId>
+            <artifactId>hand-history-collector-service</artifactId>
+            <type>firebase-sar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.cubeia.games.handhistory</groupId>
+            <artifactId>hand-history-provider-service</artifactId>
+            <type>firebase-sar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.cubeia.games.usermanagement</groupId>
+            <artifactId>user-management-service</artifactId>
+            <type>firebase-sar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.cubeia.firebase.service</groupId>
+            <artifactId>mt-random</artifactId>
+            <type>firebase-sar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.cubeia.games.poker.config</groupId>
+            <artifactId>config-service</artifactId>
+            <type>firebase-sar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.cubeia.games.shutdown</groupId>
+            <artifactId>shutdown-service</artifactId>
+            <type>firebase-sar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.cubeia.games.poker</groupId>
+            <artifactId>broadcast-service</artifactId>
+            <type>firebase-sar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.cubeia.games</groupId>
+            <artifactId>post-login-service</artifactId>
+            <type>firebase-sar</type>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.cubeia.games</groupId>
+            <artifactId>chat-filter</artifactId>
+            <type>firebase-sar</type>
+        </dependency>
+        
+        <dependency>
+			<groupId>com.cubeia.games.poker</groupId>
+			<artifactId>domain-event-service</artifactId>
+			<type>firebase-sar</type>
+		</dependency>
+		
+		<dependency>
+            <groupId>com.cubeia.games.poker</groupId>
+            <artifactId>player-service</artifactId>
+            <type>firebase-sar</type>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.props</include>
+				</includes>
+			</testResource>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>false</filtering>
+				<excludes>
+					<exclude>**/*.props</exclude>
+				</excludes>
+			</testResource>
+		</testResources>
+	    
+        <plugins>
+		      <plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-dependency-plugin</artifactId>
+		        <version>2.8</version>
+		        <executions>
+		          <execution>
+		            <id>copy</id>
+		            <phase>package</phase>
+		            <goals>
+		              <goal>copy</goal>
+		            </goals>
+		            <configuration>
+		              <artifactItems>
+		                <artifactItem>
+						  <groupId>mysql</groupId>
+						  <artifactId>mysql-connector-java</artifactId>
+						  <version>5.1.27</version>
+		                </artifactItem>
+		              </artifactItems>
+		              <outputDirectory>${project.build.directory}/firebase-run/firebase-${firebase.version}/lib/common</outputDirectory>
+		            </configuration>
+		          </execution>
+		        </executions>
+		      </plugin>    
+    
+        
+        
+            <plugin>
+                <groupId>com.cubeia.tools</groupId>
+                <artifactId>firebase-maven-plugin</artifactId>
+                <version>${firebase.version}</version>
+
+                <configuration>
+                    <!-- enable copy of overlay files -->
+                    <overlaysEnabled>true</overlaysEnabled>
+
+                    <!-- copy overlay files from this directory to the firebase root -->
+                    <!-- 
+                    <overlaySourceDirectory>${basedir}/src/test/resources/firebase</overlaySourceDirectory>
+                     -->
+                    <overlaySourceDirectory>${basedir}/target/test-classes/firebase</overlaySourceDirectory>
+
+                    <!-- included Firebase archives with scope provided -->
+                    <includeProvidedArchives>true</includeProvidedArchives>
+
+                    <!-- delete temp firebase instance on exit, set to false for faster
+                             startup -->
+                    <deleteOnExit>false</deleteOnExit>
+                    <deleteOnStart>false</deleteOnStart>
+
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+
+        <profile>
+            <id>exclude-embedded-mongo-tests</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.13-SONATYPE</version>
+                        <configuration>
+                            <excludes>
+                                <exclude>**/*EmbeddedMongo*.java</exclude>
+                            </excludes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- Activate this profile to use integrations. This currently needs: -
+              Cubeia Network running on port on location defined in cluster.props - A mongodb
+              server running. Settings configured in poker.properties -->
+        <profile>
+            <id>use-integrations</id>
+            <activation>
+                <property>
+                    <name>use-integrations</name>
+                </property>
+            </activation>
+            
+            <properties>
+            	<use-mock-integrations>false</use-mock-integrations>
+            </properties>
+            
+            
+            <dependencies>
+                <dependency>
+                    <groupId>com.cubeia.network.users</groupId>
+                    <artifactId>fb-user-service</artifactId>
+                    <version>${cubeia.network.version}</version>
+                    <type>firebase-sar</type>
+                </dependency>
+                <dependency>
+                    <groupId>com.cubeia.games.handhistory</groupId>
+                    <artifactId>hand-history-storage-service</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                    <type>firebase-sar</type>
+                </dependency>
+                <dependency>
+                    <groupId>com.cubeia.network.wallet.firebase</groupId>
+                    <artifactId>cubeia-wallet-service</artifactId>
+                    <version>${cubeia.network.version}</version>
+                    <type>firebase-sar</type>
+                </dependency>
+                <dependency>
+                    <groupId>com.cubeia.games</groupId>
+                    <artifactId>backend-service-cubeia-wallet-adapter</artifactId>
+                    <version>${project.version}</version>
+                    <type>firebase-sar</type>
+                </dependency>
+                <dependency>
+                    <groupId>com.cubeia.games.poker</groupId>
+                    <artifactId>tournament-history-storage-service</artifactId>
+                    <type>firebase-sar</type>
+                </dependency>
+                
+                <dependency>
+                    <groupId>com.cubeia.network.operator</groupId>
+                    <artifactId>fb-operator-service</artifactId>
+                    <version>${cubeia.network.version}</version>
+                    <type>firebase-sar</type>
+                </dependency>
+                
+            </dependencies>
+        </profile>
+        <profile>
+            <id>no-integrations</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <property>
+                    <name>no-integrations</name>
+                </property>
+            </activation>
+            
+            <properties>
+            	<use-mock-integrations>true</use-mock-integrations>
+            </properties>
+            
+            <dependencies>
+                <dependency>
+                    <groupId>com.cubeia.network.users</groupId>
+                    <artifactId>fb-mock-user-service</artifactId>
+                    <version>${cubeia.network.version}</version>
+                    <type>firebase-sar</type>
+                </dependency>
+                <dependency>
+                    <groupId>com.cubeia.games</groupId>
+                    <artifactId>backend-service-mock</artifactId>
+                    <type>firebase-sar</type>
+                </dependency>
+                <dependency>
+                    <groupId>com.cubeia.network.wallet.firebase</groupId>
+                    <artifactId>mock-wallet-service</artifactId>
+                    <version>${cubeia.network.version}</version>
+                    <type>firebase-sar</type>
+                </dependency>
+                <dependency>
+                    <groupId>com.cubeia.network.operator</groupId>
+                    <artifactId>fb-operator-service-mock</artifactId>
+                    <version>${cubeia.network.version}</version>
+                    <type>firebase-sar</type>
+                </dependency>
+                		                 
+            </dependencies>           
+        </profile>
+    </profiles>
+</project>

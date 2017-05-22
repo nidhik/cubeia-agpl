@@ -1,0 +1,330 @@
+.seat {
+    height: 28%;
+    position: absolute;
+    width:19%;
+    width:28.5%;
+    font-size:120%;
+
+    .avatar {
+        top:0;
+        left:0;
+        z-index: 2;
+    }
+
+    .player-name {
+        left:38%;
+        top:55%;
+        z-index: 2;
+    }
+
+    .seat-balance {
+        left:38%;
+        top:66%;
+        z-index: 2;
+    }
+    .action-amount {
+        top:10%;
+        left:-28%;
+        width:85%;
+        z-index: 2;
+        font-size: 90%;
+    }
+    .seat-progressbar {
+        z-index: 99999999999999;
+        width:20%;
+        height:20%;
+        position: absolute;
+    }
+    .avatar-base,.avatar-base-border {
+        width:55%;
+        top:0;
+        left:0;
+        z-index: 2;
+    }
+    .cards-container {
+        width:20%;
+        z-index: 1;
+    }
+    .cards-container-player  {
+        .transform(scale3d(0.6,0.6,1));
+        .transition-transform(1s ease-out);
+    }
+    .player-status, .action-text,  .hand-strength {
+        top:74%;
+        left:40%;
+        z-index: 2;
+    }
+}
+.variant-telesina {
+    .seat {
+        .cards-container-player {
+            .transform(scale3d(0.9,0.9,1));
+        }
+    }
+}
+.player-name {
+    width:38%;
+    text-align: left;
+    position: absolute;
+    font-size:90%;
+    color:#fff;
+    top:2%;
+    left:31%;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.avatar-base {
+    .linear-gradient(top, #3e3d3e 0%, #111 100%);
+    width:80%;
+    height: 35%;
+    left:10%;
+    top:0%;
+    .border-radius(1em);
+    border: 2px solid #b4b8ba;
+    position: absolute;
+    display: block;
+    z-index: 2;
+
+}
+.avatar-base-border {
+    display: none;
+    width:80%;
+    height: 35%;
+    left:10%;
+    top:0%;
+    .border-radius(1em);
+    border: 2px solid #b4b8ba;
+    position: absolute;
+    z-index: 2;
+
+}
+.active-seat .avatar-base-border {
+    display: block;
+    border: 3px solid #b3d800;
+    margin-top:-2px;
+    margin-left:-2px;
+}
+
+.player-card-container {
+    position:absolute;
+    width:50%;
+    height:100%;
+    top:-45%;
+    left:0;
+    z-index: 1;
+
+}
+.cards-container-player .player-card-container {
+    position:absolute;
+    left:0;
+    width:60%;
+    height:100%;
+    top:0;
+}
+
+.seat {
+    .cards-container.cards-container-player {
+        width:40%;
+    }
+}
+
+.cards-container {
+    position: absolute;
+    left: 27%;
+    height: 30%;
+    top: 50%;
+    width:35%;
+}
+
+.player-card-container:last-child {
+    left: 20%;
+    top: 10%;
+}
+img.player-card {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+}
+
+.canvas-progress-bar {
+    position: absolute;
+    left:50%;
+    top:15%;
+    width:10%;
+    height:60%;
+
+}
+
+.action-text, .player-status, .hand-strength {
+    color:@mainGreen;
+    font-weight: bold;
+    color:#d6b91a;
+    opacity: 1;
+    position: absolute;
+    top:55%;
+    width:72%;
+    left:14%;
+    text-align: left;
+    font-size:90%;
+    text-transform: uppercase;
+    padding:2% 0;
+    z-index: 1;
+}
+
+.hand-strength {
+    color:#fff;
+    &.won {
+        color: #eecc00;
+    }
+    &.long {
+        font-size: 80%;
+    }
+}
+div.seat-balance {
+    font-size:100%;
+    text-align: left;
+    position: absolute;
+    color:#ababab;
+    top: 77%;
+    width:100%;
+    &:first-letter {
+        color:#ababab;
+    }
+    z-index: 1;
+
+}
+.action-amount {
+    position: absolute;
+    top: 88%;
+    width:100%;
+}
+.action-amount, .pot-container {
+    font-size: 100%;
+    font-weight: bold;
+
+
+    div.value {
+        .border-radius(0.9em);
+        display: inline-block;
+
+        span {
+            padding: 0.4em 0.6em 0.4em 1.8em;
+            display: block;
+        }
+    }
+
+}
+
+
+.player-action-icon {
+    background-size: 100%;
+    margin-left:2px;
+    display:inline-block;
+    background-repeat: no-repeat;
+    width:5%;
+    padding-bottom: 6%;
+
+}
+.action-raise-icon, .action-bet-icon {
+    background-image: url("../images/table/raise-arrow.png");
+}
+.action-call-icon, .action-check-icon {
+    background-image: url("../images/table/check-arrow.png");
+}
+.action-call-icon.action-inactive, .action-check.action-inactive {
+    background-image: url("../images/table/check-arrow-inactive.png");
+}
+.action-raise-icon.action-inactive, .action-bet.action-inactive {
+    background-image: url("../images/table/raise-arrow-inactive.png");
+}
+.action-big-blind-icon {
+    display:none;
+}
+.action-small-blind-icon {
+    display:none;
+}
+
+.open-seat {
+    position: absolute;
+    width:100%;
+    text-align: center;
+    top:40%;
+    color:#555;
+    font-weight: bold;
+}
+
+
+.progress-bar {
+    position: absolute;
+    background:#b3d800;
+    .border-radius(0 0 3px 3px);
+    width:4%;
+    height: 80%;
+    left:-10%;
+    top:10%;
+    margin-left:0px;
+}
+.seat-empty {
+    cursor:pointer;
+    .avatar-base {
+        border:none;
+        .linear-gradient(top, #343434 0%, #252525 100%);
+        .box-shadow(0px 2px 3px #111);
+    }
+
+}
+
+.seat-folded, .seat-sit-out{
+    opacity: 0.4;
+}
+div.seat-inactive {
+    display: none;
+
+}
+.seat-sit-out .player-card-container {
+    display:none;
+}
+
+.discard-description {
+    font-size: 120%;
+    font-weight: bold;
+    color: #F5D46C;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:10%;
+    text-align: center;
+    text-shadow: 0px 1px #002200;
+}
+.discard-arrow {
+    background-image: url("../images/discard-card-arrow.png");
+    background-size: 70%;
+    width: 10%;
+    height: 100%;
+    display: block;
+    background-position: center 10%;
+    animation: arrow-position 1.3s infinite;
+    -webkit-animation: arrow-position 1.3s infinite;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+}
+
+@keyframes arrow-position
+           {
+               0% {background-position:center 10%;}
+               50% {background-position: center 100%;}
+               100 {background-position:center 10%;}
+           }
+
+@-webkit-keyframes arrow-position /* Safari and Chrome */
+{
+                   0% {background-position:center 10%;}
+                   50% {background-position: center 100%;}
+                   100 {background-position:center 10%;}
+                   }
+
+
+

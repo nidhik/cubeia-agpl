@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+  xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <display-name>poker-admin</display-name>
+
+  <!-- spring context listener -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+        classpath:poker-admin-spring-app.xml classpath:poker-admin-spring-ds.xml
+    </param-value>
+  </context-param>
+  <listener>
+    <listener-class>
+      org.springframework.web.context.ContextLoaderListener
+    </listener-class>
+  </listener>
+
+  <!--  WICKET -->
+  <filter>
+       <filter-name>WicketApplication</filter-name>
+       <filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+       <init-param>
+	      <param-name>applicationFactoryClassName</param-name>
+	      <param-value>org.apache.wicket.spring.SpringWebApplicationFactory</param-value>
+	    </init-param>
+   </filter>
+   <filter-mapping>
+       <filter-name>WicketApplication</filter-name>
+       <url-pattern>/*</url-pattern>
+   </filter-mapping>
+  
+   <!-- Index pages -->
+   <welcome-file-list>
+     <welcome-file>index.html</welcome-file>
+   </welcome-file-list>
+  
+</web-app>

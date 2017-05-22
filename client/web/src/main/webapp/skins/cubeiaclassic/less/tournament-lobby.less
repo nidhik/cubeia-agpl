@@ -1,0 +1,21 @@
+.tournament-view {
+
+    background: @tournament-lobby-background;
+
+    .register-button {
+        .default-btn;
+        &.full {
+            text-shadow: none;
+            color:#777;
+            .linear-gradient(top,@leave-lobby-gradient-start 0%, @leave-lobby-gradient-end 100%);
+        }
+    }
+    .leave-action {
+        background: none;
+        background-color: @leave-lobby-background-color;
+        .linear-gradient(top,@leave-lobby-gradient-start 0%, @leave-lobby-gradient-end 100%);
+        text-shadow:1px 2px @leave-lobby-text-shadow;
+    }
+
+
+}

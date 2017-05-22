@@ -1,0 +1,326 @@
+{
+    "discard": {
+        "description" : "選擇放棄手牌"
+    },
+    "level-up" : { 
+        "title" : "升級！", 
+        "message" : "你已到達級數" 
+    },
+    "tab " : { 
+        "lobby" : "遊戲大廳"
+    },
+    "achievement" : { 
+        "completed" : "已完成！ "
+    },
+    "item" : { 
+        "awarded" : "新項目 "
+    },
+    "account" : {
+        "logout" : "登出",
+        "logout-warning" : "是否確定要離開您的撲克賬戶？"
+        
+    },
+    "login" : {
+        "login" : "登入",
+        "status" : "狀態:",
+        "disconnected" : "連接已斷開, 重試中（數數 %s 秒）",
+        "connecting" : "連接中",
+        "connected" : "已連接",
+        "login-failed" : "連接失敗狀態  %s 秒"
+    },
+    "lobby" : {
+        "menu" : {
+            "cash-games" : "現金遊戲",
+            "sit-n-gos"  : "坐滿即玩",
+            "tournaments" : "錦標賽"
+        },
+        "filter " : {
+            "show-filters" : "顯示篩選結果",
+            "show-tables" : "顯示牌桌",
+            "full" : "隱藏滿桌",
+            "empty" : "隱藏空桌",
+            "show-limits" : "顯示限注",
+            "no-limit" : "無限額",
+            "fixed-limit" : "固定限額",
+            "pot-limit" : "底池限注",
+            "stakes" : "注額",
+            "low" : "低",
+            "mid" : "中",
+            "high" : "高",
+            "currency" : "選擇貨幣",
+            "show-registering" : "僅提供給註冊用戶"
+        },
+        "list" : {
+            "name" : "姓名",
+            "buy-in" : "買入",
+            "players" : "玩家",
+            "status" : "狀態",
+            "registered" : "玩家",
+            "starting" : "正準備開始",
+            "seated" : "坐下",
+            "blinds" : "盲注",
+            "type" : "遊戲類型",
+            "go-to-table" : "前往牌桌",
+            "go-to-lobby" : "前往遊戲大廳"
+        }
+    },
+    "table" : {
+        "buttons" : {
+            "leave" : "離開",
+            "no-more-blinds" : "沒有足夠的盲注",
+            "sit-out-next" : "在下一局牌站起",
+            "fold" :"棄牌",
+            "call" : "跟注",
+            "check" : "過牌",
+            "raise" : "加註",
+            "bet" : "下注",
+            "cancel" :"取消",
+            "big-blind" : "大盲",
+            "small-blind" : "小盲",
+            "raise-to" : "加注至",
+            "join" : "加入",
+            "sit-in" : "坐下",
+            "rebuy" : "重買",
+            "decline" : "拒絕",
+            "add-on" : "附加",
+            "discard": "棄牌"
+
+        },
+        "future" : {
+            "fold" : "棄牌",
+            "check-fold" : "過牌/棄牌",
+            "call" : "跟注",
+            "check-call-any" : "過牌/跟任何注",
+            "call-any" : "跟任何注",
+            "check" : "過牌",
+            "raise-to" : "加注至",
+            "raise-any" : "加任意注"
+        },
+        "wait-for-big-blind" : "等待大盲",
+        "wait-for-big-blind-description" : "不選擇大盲下注，在下一局牌加入",
+        "blinds" : "盲注",
+        "level" : "下一級：",
+        "pot" : ":獎池：",
+        "hand-history" : "手牌歷史記錄",
+        "open" : "打開",
+
+        "log" : {
+            "chat-input-desc" : "發送消息",
+            "hide-chat" : "隱藏對話信息",
+            "show-chat" : "顯示對話信息",
+            "hide-events" : "隱藏牌桌項目",
+            "show-events" : "顯示牌桌項目"
+        }
+    },
+    "user" : {
+        "logged-in" : "已登入：",
+        "log-out" : "登出",
+        "my-page" : "我的頁面"
+    },
+    "disconnect-dialog" : {
+        "title" : "您已斷開連接",
+        "message" : "正嘗試重新連接",
+        "attempt" : "嘗試",
+        "unable-to-reconnect" : "無法重新建立連接",
+        "reload" : "重新加載"
+    },
+    "generic-dialog" : {
+        "cancel" : "取消",
+        "continue" : "繼續"
+    },
+    "buy-in" : {
+        "your-balance" : "你的餘額：",
+        "buy-in-at" : "買入于",
+        "buy-in" : "買入",
+        "cancel" : "取消",
+        "ok-button" : "買入",
+        "max-amount" : "最大金額:",
+        "min-amount" : "最小金額:",
+        "buy-in-amount" : "買入金額:",
+        "error" : "無法買入",
+        "insufficient-funds" : "You你沒有足夠的金額買入",
+        "too-much-funds" : "你有過多的金額，不能再在此牌桌買入"
+
+    },
+    "tournament-lobby" : {
+        "tournament-full" : "錦標賽名額已滿",
+        "close" : "關閉",
+        "register" : "註冊",
+        "unregister" : "註銷",
+        "go-to-table" : "前往牌桌",
+        "please-wait" : "請耐心等待…",
+        "tournament-id" : "錦標賽ID:",
+        "menu" : {
+            "players" : "玩家",
+            "tables" : "牌桌",
+            "payouts" : "派彩",
+            "blinds-structure" : "盲注架構"
+        },
+        "players" : {
+            "players" : "玩家们",
+            "player" : "玩家",
+            "stack" : "码",
+            "winnings" : "胜利",
+            "loading" : "加载玩家...",
+            "no-players" : "无玩家",
+            "search" : "搜索玩家"
+        },
+        "tables" : {
+            "tables" : "牌桌",
+            "no-tables" : "当前没有活动的牌桌"
+        },
+        "info" : {
+            "title" : "比赛信息",
+            "buy-in" : "买入费:",
+            "status" : "状态:",
+            "announced" : "通告",
+            "registering" : "注册",
+            "running" : "进行中",
+            "break" : "休息",
+            "finished" : "结束",
+            "cancelled" : "取消",
+            "closed" : "关闭",
+            "players" : "玩家:",
+            "min-players" : "最少玩家:",
+            "max-players" : "最多玩家:",
+            "registration-starts" : "注册开始:",
+            "game-type" : "比赛形式:"
+        },
+        "stats" : {
+            "title" : "统计",
+            "max-stack" : "最大筹码数:",
+            "min-stack" : "最少筹码数:",
+            "average-stack" : "平均筹码数:",
+            "current-level" : "当前等级:",
+            "players-left" : "剩余玩家:"
+        },
+        "payouts" : {
+            "title" : "派彩",
+            "prize-pool" : "彩池:",
+            "position" : "名次",
+            "amount" : "数量"
+        },
+        "blinds-structure" : {
+            "title" : "盲注结构",
+            "blinds" : "盲注",
+            "duration" : "时间长短",
+            "break" : "休息"
+        }
+
+    },
+    "hand-history" : {
+        "no-history" : "您还未在所选牌桌玩过任何手牌",
+        "hand-info" : "手牌信息",
+        "hand-id" : "手牌编码:",
+        "table-name" : "牌桌名:",
+        "table-id" : "牌桌编码:",
+        "start-time" : "开始时间:",
+        "seats" : "座位",
+        "player-name " : "名字:",
+        "position" : "名次:",
+        "initial-balance" : "起始资产",
+        "events" : "赛事",
+        "was-dealt" : "底牌已经发出",
+        "community-cards" : "公共牌:",
+        "shows" : "翻开:",
+        "has" : "已经",
+        "total-bet" : "总下注数:",
+        "total-win" : "总赢取数",
+        "previous" : "上一个",
+        "next" : "下一个",
+        "close" : "关闭",
+        "title" : "手牌记录"
+    },
+    "dialogs" : {
+        "tournament-not-found" : {
+            "header" : "找不到比赛",
+            "message" : "找不到指定的比赛"
+        },
+        "deposit-cancel" : {
+            "header" : "存款/充值失败",
+            "message" : "您存款/充值失败，请再尝试"
+        },
+        "deposit-success" : {
+            "header" : "存款/充值成功",
+            "message" : "您存款/充值成功。您的账号将很快收到新的筹码"
+        },
+        "tournament-won": {
+            "header" : "信息",
+            "message" : "恭喜您在本次比赛中获胜!"
+        },
+        "tournament-out" : {
+            "header" : "信息",
+            "message" : "您是 %s名完成本次比赛"
+        },
+        "break-is-starting" : {
+            "header" : "信息",
+            "message" : "休息时段即将开始，等待其他牌桌结束当前牌局"
+        },
+        "on-break": {
+            "header" : "信息",
+            "message" : "当前为休息时段。比赛将在 %s 秒后再开始"
+        },
+        "tournament-closed" : {
+            "header" : "信息",
+            "message" : "比赛已关闭"
+        },
+        "free-check" : {
+            "header" : "Are you sure you want to fold?",
+            "message" : "You are about to fold when it's free to check"
+        },
+        "tournament-register-success" : {
+            "header" : "信息",
+            "message" : "您已成功注 %s 比赛"
+        },
+        "tournament-register-failure" : {
+            "header" : "信息",
+            "message " : "您注册 %s 比赛失败"
+        },
+        "tournament-unregister-success" : {
+            "header" : "信息",
+            "message" : "您已经成功注销 %s 比赛的注册"
+        },
+        "tournament-unregister-failure": {
+            "header" : "信息",
+            "message" : "您注销 %s 比赛的注册失败"
+        },
+        "force-logged-out" : {
+            "header" : "您已经登出",
+            "message" : "您已经从另一台电脑上登陆"
+        },
+        "leave-table" : {
+            "header" : "离开牌桌",
+            "message": "您确定要离开"
+        },
+        "watch-table-failed" : {
+            "header" : "牌桌信息",
+            "message" : "无法打开牌桌"
+        },
+        "not-enough-funds" : {
+            "header" : "余额不足",
+            "message" : "您没有足够的余额买入"
+        }
+    },
+    "table-log" : {
+        "community-cards" : "公共牌:",
+        "shows" : "翻开",
+        "has" : "已经",
+        "wins" : "获胜",
+        "hand-started" : "手牌开始:"
+    },
+    "payment" : {
+    	"notifications" : {
+	    	"deposit-confirmed" : {
+	    		"title" : "收到资金",
+	    		"text" : "您已收到 %s"
+	    	},
+	    	"error" : {
+	    		"title" : "付款错误",
+	    		"error-below-limit" : "您的支付低于最低额度",
+	    		"error-general" : "您的付款处理错误，请联系技术支援"
+	    	}
+    	}
+    }
+
+}
+

@@ -1,0 +1,10 @@
+<service auto-start="true">
+    <name>Operator Embed Service</name>
+    <public-id>ns://www.cubeia.com/poker/Operatorembedservice</public-id>
+    <contract>com.cubeia.games.poker.admin.service.OperatorEmbedContract</contract>
+    <service>com.cubeia.games.poker.admin.service.OperatorEmbedService</service>
+    <description/>
+    <exported>
+
+    </exported>
+</service>

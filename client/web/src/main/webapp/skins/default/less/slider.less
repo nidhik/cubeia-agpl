@@ -1,0 +1,110 @@
+#raiseValue {
+    color: white;
+}
+
+.slider-container {
+    background-color: #464646;
+    width:36%;
+    height:25%;
+    top:0;
+    right: 0;
+    position: absolute;
+    z-index: 1001;
+    .border-radius(4px);
+}
+.poker-slider {
+    position: absolute;
+    height: 50%;
+    width:70%;
+    right:3%;
+    bottom:25%;
+    border-radius: 4px;
+    z-index: 1000;
+    .user-select(none);
+}
+.marker-container {
+    position: absolute;
+    right:0;
+    width:36%;
+    top:-18%;
+    height: 20%;
+    text-align: right;
+}
+.marker {
+    display: inline-block;
+    padding: 1.5% 4%;
+    margin-left: 2px;
+    font-weight: normal;
+    font-family: Arial;
+    font-size: 120%;
+    text-align: left;
+    color: #FFFFFF;
+    cursor: pointer;
+    .linear-gradient(top,#65666a 0%, #474747 100%);
+    .border-radius(2px);
+    &:hover {
+        .linear-gradient(top,#777777 0%, #65666a 100%);
+    }
+    &:active {
+
+    }
+
+}
+
+.ui-slider {
+    width: 70%;
+    background: #fff;
+
+}
+.ui-slider-range {
+    bottom: 0%;
+    position: absolute;
+    width: 100%;
+}
+
+.poker-slider .ui-slider-handle {
+
+    width:6%;
+    height:120%;
+    position:absolute;
+    margin-top:-1%;
+    margin-left:-2%;
+    margin-bottom: 0px;
+    z-index:2000;
+    background: #bfc1c7;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 0px;
+    -webkit-box-shadow: 0px 0px 2px 0px #222222;
+    box-shadow: 0px 0px 2px 0px #222222;
+
+    background: #a8a8a8; /* Old browsers */
+    .linear-gradient(top,  #bfc1c7 0%, #848484 100%);
+}
+
+.ui-widget-header {
+    border: 0px;
+    height:100%;
+    background: #36cc44;
+    border-radius: 4px 4px 4px 4px;
+    .linear-gradient(bottom, #9BBA00 0%, #C3E30C 100%);
+}
+
+.bet-input {
+    position: absolute;
+    bottom:15%;
+    left:3%;
+    width:9%;
+    padding: 1.5%;
+    width:16%;
+    border:none;
+    .border-radius(2px);
+    font-size:100%;
+    background-color: #fff;
+    text-align: right;
+    .box-shadow-both(inset 1px 1px 3px #999);
+    outline: 1px;
+}
+
+

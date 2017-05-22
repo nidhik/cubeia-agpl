@@ -1,0 +1,51 @@
+.toolbar-background {
+    .linear-gradient(bottom, @toolbar-gradient-end 0%, @toolbar-gradient-start 100%);
+    .box-shadow-both(inset 0px 0px 6px @toolbar-inner-shadow, 0px 0px 3px @toolbar-outer-shadow);
+    opacity: 0.7;
+}
+#toolbar {
+    .tabs {
+        li {
+            .tab-content {
+                .box-shadow(inset 0px 0px 2px #999);
+                .linear-gradient(top, @toolbar-tab-gradient-start 0%, @toolbar-tab-gradient-end 100%);
+
+            }
+            &.active {
+                .tab-content {
+                    .linear-gradient(top, @toolbar-tab-gradient-active-start 0%, @toolbar-tab-gradient-active-end 100%);
+                    .box-shadow(inset 0px 0px 2px #fff);
+                }
+            }
+            &.focus {
+                .tab-content {
+                    .linear-gradient(top, @toolbar-tab-gradient-focus-start 0%, @toolbar-tab-gradient-focus-end 100%);
+                    .box-shadow(inset 0px 0px 2px #fff);
+                }
+            }
+        }
+    }
+
+   .user-panel {
+       &.active {
+           .linear-gradient(top, @user-panel-gradient-start 0%, @user-panel-gradient-end 100%);
+
+           .user-panel-name {
+               &:before {
+                   border-top-color: @user-panel-arrow-color;
+               }
+           }
+       }
+
+   }
+}
+.main-menu-button {
+    background-image: url("../images/menu/menu-button.png");
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+

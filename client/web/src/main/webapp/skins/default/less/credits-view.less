@@ -1,0 +1,159 @@
+#creditsView *, #creditsView *:after, #creditsView  *:before {
+    box-sizing: border-box;
+}
+#creditsView {
+    background-color: #252525;
+    min-height: 100%;
+}
+.current-address {
+    width:80%;
+    background: transparent;
+    border:none;
+    padding: none;
+    display: block;
+    float:left;
+    height: 32px;
+    padding-left: 10px;
+}
+.edit-address{
+    width:10%;
+    height:36px;
+    display: block;
+    background-image: url("../images/settings-icon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #343434;
+    border: none;
+    float: right;
+    margin-right:1px;
+    &:hover, &:active {
+        background-color:#555;
+    }
+}
+.withdraw-address-container {
+    width:80%;
+    div, div:after, div:before {
+        box-sizing: content-box;
+    }
+    .form-control {
+        background-color: #c3c3c3;
+        display: block;
+        padding: 1px 0px;
+        height:40px;
+    }
+
+}
+.withdraw-amount {
+    width:20%;
+}
+.amount-group {
+    label {
+        margin-right:4px;
+    }
+    text-align: right;
+    width: 80%;
+    input {
+        text-align: right;
+    }
+}
+.edit-address-container {
+    width:80%;
+    .withdraw-address-container {
+        width:100%;
+        margin-bottom:4px;
+        .form-control {
+            background-color: #fff;
+            display: block;
+            height:40px;
+        }
+
+    }
+    .buttons-container {
+        width:100%;
+        text-align: right;
+        a {
+            text-align: left;
+        }
+    }
+
+    .cancel-button {
+         background: #555;
+        text-shadow: none;
+    }
+}
+.withdraw-amount-container {
+    p {
+        color:#aaa;
+        span {
+            color:#fff;
+        }
+    }
+}
+.pending-table {
+    .to-address {
+        font-size: 80%;
+        color:#aaa;
+    }
+
+    .amount,.cancel {
+        text-align: right;
+    }
+}
+.form-group.has-error input {
+    background-color:#ffe3e3;
+}
+
+.qr-code-container {
+    width:20%;
+    display:block;
+    float:left;
+    margin-right: 2%;
+    img {
+        width:100%;
+    }
+}
+.wallet-address-container {
+
+    width:75%;
+    font-size:120%;
+    display:block;
+    float:left;
+    .min-deposit {
+        font-size: 80%;
+        color:#d68787;
+    }
+}
+.deposit-wallet-container {
+    margin-top:40px;
+}
+
+.deposit-container {
+    p {
+        color:#aaa;
+    }
+    .form-control {
+        background-color: #c3c3c3;
+        display: block;
+        padding: 1px 0px;
+        height:40px;
+    }
+    input,input:active, input:focus {
+        outline: 0;
+        border:none;
+        background-color: transparent;
+        width: 100%;
+        padding: 7px;
+    }
+}
+.withdrawals-table, .deposits-table {
+    tr:nth-child(even) {
+        background-color: #333;
+    }
+    td,th {
+        padding: 8px;
+        &.amount {
+            text-align: right;
+            width:15%;
+        }
+    }
+}

@@ -1,0 +1,78 @@
+
+
+.player-name {
+    color:@player-name-color;
+}
+.avatar-base {
+    .linear-gradient(top, @avatar-base-gradient-start 0%, @avatar-base-gradient-end 100%);
+    border: 2px solid @avatar-base-border-color;
+
+}
+
+
+
+.action-text, .player-status, .hand-strength {
+    color:@seat-action-text;
+}
+
+.hand-strength {
+    color:@hand-strength-color;
+    &.won {
+        color: @hand-strength-winner-color;
+    }
+}
+div.seat-balance {
+    color:@seat-balance-color;
+    &:first-letter {
+        color:@seat-balance-color;
+    }
+}
+
+.action-amount, .pot-container {
+    div.value {
+        background-image: url("../images/global/opacity40.png");
+
+        span {
+            background-image: url("../images/table/chip.png");
+            background-repeat: no-repeat;
+            background-size: 1.5em;
+            background-position: 0.2em center;
+
+        }
+    }
+}
+.pot-container {
+    div.value {
+       span {
+           background-image: url("../images/table/chip-pot.png");
+       }
+    }
+}
+
+.action-raise-icon, .action-bet-icon {
+    background-image: url("../images/table/raise-arrow.png");
+}
+.action-call-icon, .action-check-icon {
+    background-image: url("../images/table/check-arrow.png");
+}
+.action-call-icon.action-inactive, .action-check.action-inactive {
+    background-image: url("../images/table/check-arrow-inactive.png");
+}
+.action-raise-icon.action-inactive, .action-bet.action-inactive {
+    background-image: url("../images/table/raise-arrow-inactive.png");
+}
+
+.open-seat {
+    color: @seat-open-text-color;
+}
+.progress-bar {
+    background: @seat-progressbar-background;
+}
+.seat-empty {
+    .avatar-base {
+        background-color: #222;
+    }
+
+}
+
+

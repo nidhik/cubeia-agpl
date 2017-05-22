@@ -1,0 +1,41 @@
+.logo-container {
+    width: 250px;
+    height: 100px;
+    background-image: url("../images/lobby/poker-logo.png");
+    background-repeat: no-repeat;
+    margin-top:10px;
+    background-size: 70%;
+
+}
+
+.lobby-container {
+    background-color: #252525;
+    background-image: url("../images/lobby/lobby-background.png");
+    background-repeat: repeat-x;
+    min-height: 100%;
+}
+
+.btn-lobby {
+    .default-btn;
+    float: right;
+}
+table thead {
+    th.sorting {
+        background-image: url("../images/lobby/sorting-icon.png");
+    }
+    th.sorting-desc {
+        background-image: url("../images/lobby/sorting-icon-desc.png");
+    }
+    th.sorting-asc {
+        background-image: url("../images/lobby/sorting-icon-asc.png");
+    }
+}
+nav.navbar-top, nav.navbar-variant, nav.navbar-limits{
+    li {
+        &:hover, &:focus,  &.active {
+           a, &:hover, &:focus {
+               color:@mainGreen;
+           }
+        }
+    }
+}

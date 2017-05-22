@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+   http://www.springframework.org/schema/data/mongo
+   http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd">
+
+    <import resource="classpath:spring-admin-base.xml"/>
+
+    <context:component-scan base-package="com.cubeia.games.poker.admin"/>
+    <context:property-placeholder location="classpath:/admin.properties"
+                                  properties-ref="adminProperties"/> 
+
+  <!-- import_files sql is executed only when "auto" is set to "create" or "create-drop" -->
+  <util:properties id="adminProperties">
+       <prop key="hibernate.hbm2ddl.auto">update</prop>
+       <prop key="hibernate.hbm2ddl.import_files">/META-INF/sql/rakes.sql,/META-INF/sql/timings.sql,/META-INF/sql/payouts.sql,/META-INF/sql/blinds.sql,/META-INF/sql/tables.sql,/META-INF/sql/tournaments.sql</prop>
+       <prop key="db-type">jndi</prop>        
+  </util:properties>    
+
+    <mongo:mongo host="${mongo.host}" port="${mongo.port}" />
+    
+    <!-- see com.cubeia.games.poker.admin.CustomPersistenceUnitManager.java -->
+    <bean id="persistenceUnitManager" class="com.cubeia.games.poker.admin.CustomPersistenceUnitManager">
+        <property name="defaultDataSource" ref="jndi.dataSource" />
+    </bean>
+
+    <bean id="mongoStorage" class="com.cubeia.games.poker.admin.service.history.MongoStorage">
+        <constructor-arg ref="mongo"/>
+        <constructor-arg name="databaseName" value="poker"/>
+    </bean>
+
+    <bean id="adminDAO" class="com.cubeia.games.poker.admin.db.AbstractDAO">
+      <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+    <!-- Transaction attribute links, optional -->
+    <bean id="transaction-attribute-link-props" class="org.springframework.beans.factory.config.PropertiesFactoryBean"
+          p:location="classpath:transaction-attribute-links.properties"
+          p:ignoreResourceNotFound="true" />
+
+
+    <bean id="walletClient" class="com.cubeia.backoffice.wallet.client.WalletServiceClientHTTP">
+        <constructor-arg value="${network.wallet-base-url}"/>
+    </bean>
+
+    <!-- operator service -->
+    <bean id="operatorClient"
+          class="com.cubeia.backoffice.operator.client.OperatorServiceClientHTTP"
+          scope="singleton">
+        <constructor-arg value="${network.operator-base-url}"/>
+    </bean>
+
+    <bean id="networkClient" class="com.cubeia.games.poker.admin.network.CubeiaNetworkClient">
+        <property name="walletClient" ref="walletClient" />
+        <property name="operatorService" ref="operatorClient" />
+    </bean>
+
+    <!-- DataSource -->
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="jndi.dataSource"/>
+        <property name="persistenceUnitName" value="adminPersistenceUnit"/>
+        <property name="persistenceUnitManager" ref="persistenceUnitManager"></property>
+        <property name="jpaVendorAdapter">
+           <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+               <property name="showSql" value="false" />
+               <property name="generateDdl" value="false" />
+               <property name="databasePlatform" value="org.hibernate.dialect.MySQL5Dialect" />
+           </bean>
+        </property>
+        
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+                <prop key="hibernate.hbm2ddl.import_files">${hibernate.hbm2ddl.import_files}</prop>                
+            </props>
+        </property>
+    </bean>
+
+    <!-- Transaction manager -->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+    <!-- Enables @Transactional -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+</beans>

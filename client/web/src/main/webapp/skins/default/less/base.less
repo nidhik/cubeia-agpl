@@ -1,0 +1,266 @@
+/* global colors definitions */
+@mainGreen: #a04c93;
+@grayText: #999;
+@buttonGrayBg:#45484c;
+@main-background-color:#09090b;
+
+.default-table {
+    font-size:120%;
+    thead {
+        tr {
+            th {
+                border:none;
+                font-size: 80%;
+                font-weight: normal;
+            }
+        }
+    }
+    tbody {
+        tr {
+            background-color: #343333;
+            border-color: transparent;
+            td {
+                border-top: 4px solid #252525;
+                padding: 12px;
+                line-height: 2;
+            }
+        }
+    }
+}
+
+@import "compatability.less";
+@import "action-buttons.less";
+@import "lobby.less";
+@import "login.less";
+@import "seat.less";
+@import "table.less";
+@import "table-10.less";
+@import "table-9.less";
+@import "table-8.less";
+@import "table-6.less";
+@import "table-5.less";
+@import "table-2.less";
+@import "slider.less";
+@import "transitions.less";
+@import "avatars.less";
+@import "dialog.less";
+@import "toolbar.less";
+@import "main-menu.less";
+@import "toggle-switch.less";
+@import "circular-progressbar.less";
+@import "tournament-lobby.less";
+@import "hand-history.less";
+@import "table-log.less";
+@import "account.less";
+@import "context-menu.less";
+@import "cards.less";
+@import "iframe-loader.less";
+@import "leaderboard.less";
+@import "credits-view.less";
+
+
+label {
+    .user-select(none);
+}
+#gritter-notice-wrapper {
+    top:50px;
+}
+a {
+    cursor: pointer;
+}
+
+.account-overlay {
+    background-color:rgba(0, 0, 0, 0.5);
+    width:100%;
+    height: 100%;
+}
+
+
+.no-overflow {
+    overflow: hidden;
+}
+
+.loading-view {
+  width:100%;
+  height:100%;
+  background-color: #252525;
+}
+.loading-view-container {
+    width:250px;
+    margin:0 auto;
+    padding-top:15%;
+
+
+    .logo-container {
+      width:100%;
+
+      background-size:80%;
+      background-position: center;
+
+    }
+}
+.loading-box {
+  background-color: #2c2c2c;
+  .border-radius(3px);
+  padding:15px;
+
+  .status-label {
+    color:#919191;
+  }
+}
+.powered-by {
+  width:100%;
+  text-align: center;
+  margin-top:50px;
+}
+.loading-progressbar {
+    width:99%;
+    display: block;
+    height:20px;
+    padding: 0.5%;
+    margin-bottom: 6px;
+    .border-radius(5px);
+    background-color:#222;
+    .transition(height 0.5s);
+    .progress {
+        display: block;
+        width:0%;
+
+        background-color:@mainGreen;
+        .linear-gradient(top, #dc2727 0%, #b10101 100%);
+        height:99%;
+        .border-radius(3px);
+    }
+}
+.logout-link {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.table-info {
+    left:30%;
+    top:35%;
+    position: absolute;
+    width:40%;
+    display: block;
+    color:#ef53a3;
+    font-size:120%;
+    .blinds {
+        display: inline-block;
+    }
+    .value {
+        font-weight: bold;
+    }
+    .tournament-info {
+        display: inline-block;
+        .blinds-level {
+            display: inline-block;
+        }
+        .time-to-next-level {
+            display: inline-block;
+            font-size: 70%;
+        }
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color:#fff;
+    font-family: Arial, san-serif;
+    width: 100%;
+    height:100%;
+    background-repeat: repeat;
+    line-height: 1;
+}
+label {
+    font-weight: normal;
+}
+.view-port {
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    position: absolute;
+}
+.view-container {
+    margin-top:40px;
+    width:100%;
+    left:0;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+}
+
+.beta-stamp {
+    position:absolute;
+    top: 3px;
+    right: 6px;
+    color: rgba(192, 79, 79, 0.58);
+    font-size: 2em;
+}
+
+.basic-input {
+    padding:5%;
+    border:none;
+    font-size:130%;
+    .border-radius(4px);
+    .box-shadow(inset 1px 1px 3px #999);
+}
+.close-button {
+    padding:0.5em 0.8em;
+    .border-radius(0.2em);
+    font-size:140%;
+    cursor: pointer;
+    display:inline-block;
+    float:right;
+    margin:1em 0 0 0.5em;
+}
+
+.top-loading-overlay {
+    width:100%;
+    height: 100%;
+    opacity: 0.5;
+    background: #000;
+    z-index: 99999999999;
+}
+
+.loading-overlay-progress:after {
+    border-width: 0 3px 0 0;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, .5);
+    border-radius: 50%;
+    display: block;
+    height: 50px;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    content: "";
+    animation: overlay-spin 1s infinite linear;
+    -webkit-animation: overlay-spin 1s infinite linear;
+
+}
+
+@keyframes overlay-spin {
+               from { transform: rotate(0deg); }
+               to { transform: rotate(360deg); }
+           }
+@-webkit-keyframes overlay-spin {
+                       from { -webkit-transform: rotate(0deg); }
+                       to { -webkit-transform: rotate(360deg); }
+                   }
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    @import "devices/ipad/ipad-base.less";
+}
+@media (max-width:615px){
+    @import "devices/iphone/iphone-lobby-base.less";
+}
+@media (max-width:480px), (max-height:480px){
+    @import "devices/iphone/iphone-base.less";
+}
+
+
+@import "dev.less";

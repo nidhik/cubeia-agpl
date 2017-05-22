@@ -1,0 +1,6 @@
+repo: 3de52de129456a431df32e21714337d28571fc0d
+node: b40a0e03d981f9d67195cecdff99e1f68e91e3ff
+branch: default
+latesttag: poker-root-1.0.0
+latesttagdistance: 5
+changessincelatesttag: 5

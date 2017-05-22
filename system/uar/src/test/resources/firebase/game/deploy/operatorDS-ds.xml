@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+        <entry key="url">jdbc:h2:file:db/operator_service;AUTO_SERVER=TRUE</entry>
+        <entry key="driver">org.h2.Driver</entry>
+        <entry key="user">sa</entry>
+        <entry key="password"></entry>
+</properties>
+
+<!-- To use mysql, disable the above and enable the below -->
+
+<!-- properties>
+        <entry key="url">jdbc:mysql://localhost:3306/operator_service</entry>
+        <entry key="driver">com.mysql.jdbc.Driver</entry>
+        <entry key="user">poker</entry>
+        <entry key="password">poker</entry>
+</properties -->

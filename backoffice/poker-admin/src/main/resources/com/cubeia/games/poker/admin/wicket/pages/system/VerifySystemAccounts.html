@@ -1,0 +1,77 @@
+<html xmlns:wicket="http://wicket.apache.org/">
+<head>
+</head>
+<body>
+<wicket:extend>
+
+    <div class="row-fluid">
+        
+        <div wicket:id="errorAlert" class="alert alert-danger alert-block">
+            <a class="close" data-dismiss="alert" href="#">x</a>
+            <h4 class="alert-heading">Error!</h4>
+            You are missing required system accounts! These needs to be added and configured for the system to function properly.
+        </div>
+        
+        <div class="span6">
+        
+            <div class="widget-box">
+            
+                <div class="widget-title">
+                    <h5>System Accounts</h5>
+                </div>
+                
+                <table class="table table-bordered table-striped">
+                    <tbody>
+                        <span wicket:id="systemList">
+                            <tr>
+                                <td>
+                                    <span wicket:id="currency">XXX</span>
+                                    <span wicket:id="role">Role</span>
+                                </td>
+                                <td>
+                                    <span wicket:id="accountFound">label</span>
+                                </td>
+                            </tr>
+                            
+                        </span>
+                          
+                    </tbody>
+                </table>
+                
+                
+            </div> <!-- widget-box -->
+            
+            <div class="widget-box">
+            
+                <div class="widget-title">
+                    <h5>Operator Accounts</h5>
+                </div>
+                
+                <table class="table table-bordered table-striped">
+                    <tbody>
+                        <span wicket:id="operatorList">
+                            <tr>
+                                <td>
+                                    <span wicket:id="operator">Operator</span>
+                                    <span wicket:id="currency">XXX</span>
+                                    <span wicket:id="role">Role</span>
+                                </td>
+                                <td>
+                                    <span wicket:id="accountFound">label</span>
+                                </td>
+                            </tr>
+                            
+                        </span>
+                          
+                    </tbody>
+                </table>
+                
+                
+            </div> <!-- widget-box -->
+            
+        </div>
+    </div>
+
+</wicket:extend>
+</body>
+</html>

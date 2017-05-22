@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>cubeia-network-embedded-services</artifactId>
+    <name>Cubeia Network Embedded Services</name>
+    <packaging>pom</packaging>
+    <description>
+        Contains the Cubeia Network Service Modules (User, Wallet, Operator)
+        packaged as sar's (firebase services) with an embeddd jetty.
+    </description>
+
+    <parent>
+        <groupId>com.cubeia.games</groupId>
+        <artifactId>poker-root</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>      
+    </parent>
+
+    <modules>
+        <module>user-embed-sar</module>
+        <module>wallet-embed-sar</module>
+        <module>operator-embed-sar</module>
+    </modules>
+
+</project>

@@ -1,0 +1,108 @@
+.icon-title {
+    width:100%;
+    height:28px;
+    display:block;
+    margin-bottom:15px;
+    font-size:120%;
+    .icon {
+        display: block;
+        float:left;
+        background-size:100%;
+        width:28px;
+        height:28px;
+        background-repeat: no-repeat;
+        &.leaderboard {
+            background-image: url("../images/tournament-icon.png");
+        }
+    }
+    .text {
+        height:28px;
+        float:left;
+        line-height:1.6;
+        padding-left:5px;
+        font-family: "PT Sans", Arial, sans-serif;
+        display: inline-block;
+    }
+}
+.leaderboard {
+    position: relative;
+    font-family: Arial,san-serif;
+    overflow:hidden;
+    width:100%;
+    margin-bottom:10px;
+    div {
+        box-sizing:border-box;
+    }
+    .player {
+        position: absolute;
+        display: block;
+        width:100%;
+        height:65px;
+        .transition-transform(1s);
+        .linear-gradient(@pos:top, @start:#555 0%, @end:#444 100%);
+        font-size:120%;
+        padding: 4%;
+        color:#fff;
+        line-height:2;
+        text-shadow: 3px 1px #333;
+        margin-bottom:2px;
+        .position {
+            display: inline-block;
+            width:10%;
+            height:40px;
+            overflow: hidden;
+        }
+        .lb-avatar-container {
+            width: 20%;
+            height: 42px;
+            max-width: 50px;
+            display: inline-block;
+            overflow: hidden;
+            .lb-avatar {
+                display: inline-block;
+                width:40px;
+                height:40px;
+                background-size: 100% auto;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .level {
+                display: inline-block;
+                margin-bottom: -21px;
+                margin-left: -15px;
+                width: 15px;
+                height: 18px;
+
+            }
+
+        }
+        .name {
+            padding-left:2px;
+            display: inline-block;
+            width:60%;
+            height:40px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+        }
+        .arrow {
+            display: inline-block;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            width:10%;
+            height:20px;
+            background-position: center;
+            background-size:80% auto;
+        }
+        .arrow-up {
+            .arrow;
+            background-image: url("../images/leaderboard-arrow-up.png");
+        }
+        .arrow-down {
+            .arrow;
+            background-image: url("../images/leaderboard-arrow-down.png");
+        }
+    @media()
+    }
+}

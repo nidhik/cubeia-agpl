@@ -1,0 +1,55 @@
+ul.table-log-tabs {
+
+    li {
+
+        .secondary-button;
+        a {
+            color:@action-button-color;
+        }
+        &.active {
+            .default-btn;
+            a {
+                color:#fff;
+            }
+        }
+
+        padding:0.5em 1em;
+
+    }
+}
+.table-log-container {
+
+    .table-event-log {
+        border:1px solid @event-log-border-color;
+        background: @event-log-background;
+        .box-shadow(inset 0px 2px 3px @event-log-inner-shadow-color);
+
+        div {
+            color: @event-log-text-color;
+            &.hand-started {
+                background-color: @event-log-hand-started-background-color;
+            }
+            &:nth-child(even) {
+                background-color: @event-log-even-row-background-color;
+            }
+        }
+    }
+}
+.suit-icon-s, .suit-icon-h, .suit-icon-d, .suit-icon-c {
+    display: inline-block;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 1em;
+    height: 1em;
+    background-image: url("../images/table/suit-icon-s.png");
+}
+
+.suit-icon-h {
+    background-image: url("../images/table/suit-icon-h.png");
+}
+.suit-icon-d {
+    background-image: url("../images/table/suit-icon-d.png");
+}
+.suit-icon-c {
+    background-image: url("../images/table/suit-icon-c.png");
+}

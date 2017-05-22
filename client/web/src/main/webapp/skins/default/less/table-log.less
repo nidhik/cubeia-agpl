@@ -1,0 +1,117 @@
+ul.table-log-tabs {
+    list-style-type:none;
+    position:absolute;
+    top:-5%;
+    left:0;
+    padding:0;
+    li {
+        display:inline-block;
+        padding:0;
+        a, a:hover {
+            text-decoration: none;
+        }
+    }
+}
+.table-log-container {
+    position: absolute;
+    left:0;
+    top:15%;
+    width:35%;
+    height:75%;
+    z-index:1000;
+    .user-select(text);
+
+    .table-event-log-settings {
+        background-image: url(../../cubeiaclassic/images/menu/development.png);
+        background-size: 100%;
+        width:8%;
+        position: absolute;
+        top: -30%;
+        padding-bottom: 8%;
+        right: 0;
+    }
+    .table-event-log-container{
+        height:100%;
+        width: 100%;
+        position: absolute;
+    }
+    .table-chat-container {
+        height:80%;
+        width:100%;
+        position: absolute;
+    }
+
+    .table-event-log {
+        border:1px solid #999;
+        background-color: #ddd;
+        .box-shadow(inset 0px 2px 3px #999);
+        width:100%;
+        height: 100%;
+        position: absolute;
+
+        left:0;
+
+        overflow: auto;
+        position:relative;
+
+        div {
+            width:96%;
+            padding:1% 2%;
+            font-size:100%;
+            color:#333;
+            &.hand-started {
+                background-color: #aaa;
+            }
+            &:nth-child(even) {
+                background-color: #ccc;
+            }
+
+            &.chat-message {
+                color: #2738ff;
+                .chat-player-name {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    input {
+        display: block;
+        border:1px solid #999;
+        background-color: #ddd;
+        margin-top: 1%;
+        padding: 1%;
+        width: 98%;
+        clear:both;
+
+    }
+}
+.card-str {
+    font-weight: bold;
+}
+.suit-icon-s, .suit-icon-h, .suit-icon-d, .suit-icon-c {
+    display: inline-block;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 1em;
+    height: 1em;
+}
+.new-chat-messages {
+    .border-radius(5em);
+
+    border-radius: 5em;
+    background-color: #bf0002;
+    text-shadow: none;
+    color: #fff;
+    padding: 0.6em 0.6em;
+    font-size: 65%;
+    margin-left: auto;
+    position: absolute;
+    top: -23%;
+    right: -5%;
+}
+.active {
+    .new-chat-messages {
+        display: none;
+    }
+}

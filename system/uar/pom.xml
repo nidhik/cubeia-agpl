@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>poker-uar-simple</artifactId>
+    <name>Poker System - Simple</name>
+    <packaging>firebase-uar</packaging>
+
+    <parent>
+        <groupId>com.cubeia.games</groupId>
+        <artifactId>poker-uar-root</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+     <build>
+                     
+        <plugins>     
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.8</version>
+                <executions>
+                    <execution>
+                        <id>copy</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>mysql</groupId>
+                                    <artifactId>mysql-connector-java</artifactId>
+                                    <version>5.1.27</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.h2database</groupId>
+                                    <artifactId>h2</artifactId>
+                                    <version>1.3.167</version>
+                                </artifactItem>
+                            </artifactItems>
+                            <outputDirectory>${project.build.directory}/firebase-run/firebase-${firebase.version}/lib/common</outputDirectory>
+                        </configuration>
+                    </execution>
+                                                                                                              
+                </executions>
+            </plugin>
+                        
+        </plugins>
+    </build>
+
+    <profiles>
+
+        <profile>
+            <id>history</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+                <property>
+                    <name>history</name>
+                </property>
+            </activation>
+                                  
+            <dependencies>
+                <dependency>
+                    <groupId>com.cubeia.games.handhistory</groupId>
+                    <artifactId>hand-history-storage-service</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                    <type>firebase-sar</type>
+                </dependency>
+                <dependency>
+                    <groupId>com.cubeia.games.poker</groupId>
+                    <artifactId>tournament-history-storage-service</artifactId>
+                    <type>firebase-sar</type>
+                </dependency>                
+            </dependencies>
+        </profile>
+                
+        <profile>
+            <id>bots</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <property>
+                    <name>bots</name>
+                </property>
+            </activation>
+            <dependencies>             
+                <dependency>
+                    <groupId>com.cubeia.games.poker</groupId>
+                    <artifactId>bot-service</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                    <type>firebase-sar</type>
+                </dependency>         
+            </dependencies>
+        </profile>
+                                
+        <profile>
+            <id>client</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+                <property>
+                    <name>client</name>
+                </property>
+            </activation>
+            <dependencies>             
+                <dependency>
+                    <groupId>com.cubeia.games.poker</groupId>
+                    <artifactId>war-service</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                    <type>firebase-sar</type>
+                </dependency>              
+            </dependencies>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <!-- Quick solution to get the property-file to the
+                        firebase directory. Hard-coded paths non-critical,
+                        as they affect the dev-environment quick-start -->
+
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-property-file</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>${project.build.directory}/firebase-run/firebase-${firebase.version}/conf</outputDirectory>
+                                    <overwrite>true</overwrite>
+                                    <resources>
+                                        <resource>
+                                            <directory>../../client/web/src/test/resources/</directory>
+                                            <includes>
+                                                <include>client.properties</include>
+                                            </includes>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>                                      
+                </plugins>
+            </build>                        
+        </profile>        
+        
+        <profile>
+            <id>admin</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <property>
+                    <name>admin</name>
+                </property>
+            </activation>
+            <dependencies>
+             
+                <dependency>
+                    <groupId>com.cubeia.games.poker</groupId>
+                    <artifactId>poker-admin-service</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                    <type>firebase-sar</type>
+                </dependency>           
+            </dependencies>
+                
+            <build>
+                
+                <plugins>  
+                    <plugin>
+                        <!-- Quick solution to get the property-file to the
+                        firebase directory. Hard-coded paths non-critical,
+                        as they affect the dev-environment quick-start -->
+
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-admin-service-config-files</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>${project.build.directory}/firebase-run/firebase-${firebase.version}/conf</outputDirectory>
+                                    <overwrite>true</overwrite>
+                                    <resources>
+                                        <resource>
+                                            <directory>../../backoffice/poker-admin/src/test/resources/</directory>
+                                            <includes>
+                                                <include>*.properties</include>
+                                                <include>jetty-env.xml</include>
+                                            </includes>
+                                        </resource>                                                                           
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    
+                    
+                </plugins>
+            </build>
+        </profile>
+        
+        <profile>
+            <id>network</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <property>
+                    <name>network</name>
+                </property>
+            </activation>
+            
+            <dependencies>
+             
+                <dependency>
+                    <groupId>com.cubeia.network.wallet</groupId>
+                    <artifactId>wallet-embed-service</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                    <type>firebase-sar</type>
+                </dependency>
+                
+                <dependency>
+                    <groupId>com.cubeia.network.users</groupId>
+                    <artifactId>user-embed-service</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                    <type>firebase-sar</type>
+                </dependency>
+                
+                <dependency>
+                    <groupId>com.cubeia.network.operator</groupId>
+                    <artifactId>operator-embed-service</artifactId>
+                    <type>firebase-sar</type>
+                    <version>1.0-SNAPSHOT</version>
+                </dependency>
+                
+            </dependencies>
+        </profile>  
+        
+        <profile>
+            <id>site</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <property>
+                    <name>site</name>
+                </property>
+            </activation>
+            <dependencies>             
+                <dependency>
+                    <groupId>com.cubeia.games</groupId>
+                    <artifactId>game-site-sar</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                    <type>firebase-sar</type>
+                </dependency>         
+            </dependencies>
+            
+            <build>
+                <plugins>
+                    <plugin>
+                        <!-- Quick solution to get the property-file to the
+                        firebase directory. Hard-coded paths non-critical,
+                        as they affect the dev-environment quick-start -->
+
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-property-file</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>${project.build.directory}/firebase-run/firebase-${firebase.version}/conf</outputDirectory>
+                                    <overwrite>true</overwrite>
+                                    <resources>
+                                        <resource>
+                                            <directory>../../client/web/src/test/resources/</directory>
+                                            <includes>
+                                                <include>client.properties</include>
+                                            </includes>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>                                      
+                </plugins>
+            </build>             
+        </profile>        
+    </profiles>
+
+</project>
